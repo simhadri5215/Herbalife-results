@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Coach K. Madhava - Herbalife Results</title>
+    <style>
+        /* --- General Branding & Reset --- */
+        :root {
+            --herbalife-green: #7BC143;
+            --herbalife-dark: #2C2C2C;
+            --whatsapp-green: #25D366;
+            --text-color: #333;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            overflow-x: hidden; 
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Header / Navigation --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--herbalife-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Desktop Nav */
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-weight: 500;
+            color: var(--herbalife-dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--herbalife-green);
+        }
+
+        /* Mobile Menu Icon */
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--herbalife-dark);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?fitness,gym');
+            background-size: cover;
+            background-position: center;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--herbalife-green);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-hero {
+            background-color: var(--herbalife-green);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* --- Success Stories --- */
+        .results-section {
+            padding: 3rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--herbalife-dark);
+        }
+
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .toggle-btn {
+            padding: 12px 25px;
+            border: 2px solid var(--herbalife-green);
+            background: transparent;
+            color: var(--herbalife-green);
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn.active {
+            background: var(--herbalife-green);
+            color: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card-image-container {
+            position: relative;
+            height: 220px;
+            background-color: #eee;
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .before-after-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .result-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .tag-loss { background-color: #e8f5e9; color: #2e7d32; }
+        .tag-gain { background-color: #e3f2fd; color: #1565c0; }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #888;
+            margin-top: 2.5rem;
+            line-height: 1.4;
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        /* --- Join / Contact Section --- */
+        .join-section {
+            background-color: var(--herbalife-dark);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .join-content h2 {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .coach-name-highlight {
+            font-size: 1.3rem;
+            color: var(--herbalife-green);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* UPDATED: Phone link styling */
+        .phone-link {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            display: inline-block;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 25px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .phone-link:hover {
+            background-color: white;
+            color: var(--herbalife-dark);
+        }
+
+        /* WhatsApp Button Style */
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+            margin-left: 10px; /* Spacing between call and whatsapp on desktop */
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #1ebe57;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #666;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 768px) {
+            .menu-icon { display: block; }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active { display: flex; }
+            
+            .nav-links a { margin: 15px 0; font-size: 1.1rem; }
+            
+            .hero h1 { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero { height: 65vh; }
+            
+            .cards-grid { grid-template-columns: 1fr; width: 100%; }
+            .card { margin: 0 10px; }
+
+            /* Stack buttons on mobile */
+            .btn-whatsapp { margin-left: 0; margin-top: 15px; width: 80%; }
+            .phone-link { width: 80%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-bar">
+            <div class="logo">Herbalife Nutrition</div>
+            
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776;
+            </div>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" onclick="toggleMenu()">Home</a>
+                <a href="#results" onclick="toggleMenu()">Results</a>
+                <a href="#contact" onclick="toggleMenu()">Contact Coach</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Start Your Transformation</h1>
+            <div class="hero-subtitle">Wellness Coach: K.Madhava</div>
+            <p>Personalized nutrition plans to help you reach your goals.</p>
+            <button class="btn-hero" onclick="window.location.href='#results'">See Results</button>
+        </div>
+    </section>
+
+    <section class="results-section" id="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Real results from our community.</p>
+            </div>
+
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" onclick="filterResults('all')">All Results</button>
+                <button class="toggle-btn" onclick="filterResults('loss')">Weight Loss</button>
+                <button class="toggle-btn" onclick="filterResults('gain')">Muscle Gain</button>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="card result-item type-loss">
+                    <div class="card-image-container">
+                        <img src="transformation1.jpg" alt="Weight Loss" onerror="this.src='https://via.placeholder.com/400x300?text=Customer+Photo'">
+                        <span class="before-after-label">Before & After</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="result-tag tag-loss">Weight Loss</span>
+                        <h3>k.madhava's Journey</h3>
+                        <p>"Lost 10 kg and feel amazing!"</p>
+                    </div>
+                </div>
+
+                <div class="card result-item type-loss">
+                    <div class="card-image-container">
+                        <img src="transformation3.jpg" alt="Weight Loss" onerror="this.src='https://via.placeholder.com/400x300?text=Customer+Photo'">
+                        <span class="before-after-label">Before & After</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="result-tag tag-loss">Weight Loss</span>
+                        <h3>k.yedukondalu's Story</h3>
+                        <p>"Lost 25 kg and feel amazing!"</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="disclaimer">
+                *People who use Herbalife Formula 1 twice a day as part of a healthy lifestyle can generally expect to lose around 0.5 to 1 pound per week.
+            </div>
+        </div>
+    </section>
+
+    <section class="join-section" id="contact">
+        <div class="container join-content">
+            <h2>Ready to Start?</h2>
+            <span class="coach-name-highlight">Contact Wellness Coach: K. Madhava</span>
+            
+            <a href="tel:+919642419675" class="phone-link">
+                &#128222; Call Now: +91 96424 19675
+            </a>
+            
+            <a href="https://wa.me/919642419675" target="_blank" class="btn-whatsapp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.031 0C5.396 0 0 5.396 0 12.031C0 14.16 0.556 16.148 1.517 17.89L0.279 22.422L4.93 21.198C6.611 22.109 8.528 22.588 10.519 22.588H12.035C18.666 22.588 24.062 17.192 24.062 10.561C24.062 3.93 18.666 0 12.031 0ZM12.035 20.697C10.27 20.697 8.543 20.219 7.042 19.327L6.685 19.115L2.949 20.098L3.947 16.452L3.715 16.082C2.744 14.542 2.228 12.78 2.228 10.966C2.228 5.556 6.626 1.157 12.035 1.157C17.444 1.157 21.842 5.556 21.842 10.966C21.842 16.376 17.444 20.697 12.035 20.697ZM17.472 15.395C17.175 15.247 15.717 14.529 15.445 14.43C15.172 14.331 14.974 14.281 14.776 14.578C14.578 14.875 14.009 15.543 13.835 15.741C13.662 15.939 13.489 15.964 13.192 15.815C12.895 15.667 11.939 15.353 10.805 14.342C9.92 13.552 9.322 12.576 9.149 12.279C8.976 11.982 9.13 11.821 9.279 11.673C9.413 11.54 9.577 11.327 9.725 11.154C9.874 10.981 9.923 10.857 10.022 10.659C10.121 10.461 10.072 10.288 9.997 10.14C9.923 9.991 9.329 8.531 9.081 7.937C8.841 7.361 8.597 7.44 8.416 7.448C8.251 7.456 8.053 7.456 7.855 7.456C7.657 7.456 7.335 7.53 7.063 7.827C6.791 8.124 6.023 8.842 6.023 10.302C6.023 11.762 7.088 13.173 7.236 13.371C7.385 13.569 9.349 16.6 12.357 17.899C15.365 19.198 15.365 18.799 15.909 18.749C16.454 18.699 17.67 18.031 17.917 17.338C18.165 16.645 18.165 16.051 18.09 15.927C18.016 15.804 17.768 15.741 17.472 15.395Z"/>
+                </svg>
+                Chat on WhatsApp
+            </a>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Independent Herbalife Distributor: K. Madhava</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Filter Logic
+        function filterResults(type) {
+            const cards = document.querySelectorAll('.result-item');
+            const buttons = document.querySelectorAll('.toggle-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains('type-' + type)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. Mobile Menu Logic
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
